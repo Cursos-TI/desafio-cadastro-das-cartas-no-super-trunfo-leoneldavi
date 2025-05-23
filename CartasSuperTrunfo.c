@@ -24,6 +24,8 @@ int main() {
     float areaCarta01 = 0.0f;
     float pibCarta01 = 0.0f;
     int pontosCarta01 = 0;
+    float densidadeCarta01 = 0.0f;
+    float pibpercapitaCarta01 = 0.0f;
 
     char estadoCarta02[2] = "";
     char codigoCarta02[4] = "";
@@ -32,16 +34,18 @@ int main() {
     float areaCarta02 = 0.0f;
     float pibCarta02 = 0.0f;
     int pontosCarta02 = 0;
+    float densidadeCarta02 = 0.0f;
+    float pibpercapitaCarta02 = 0.0f;
 
     printf("--- DADOS CARTA 1 ---\n");
     printf("Estado (1 letra): ");
-    scanf("%s", &estadoCarta01);
+    scanf("%1s", &estadoCarta01);
 
     printf("Codigo da carta (3 letras): ");
-    scanf("%s", &codigoCarta01);
+    scanf("%3s", &codigoCarta01);
 
     printf("Nome da cidade: ");
-    scanf("%s", &nomeCarta01);
+    scanf("%31s", &nomeCarta01);
 
     printf("Populacao da cidade: ");
     scanf("%d", &populacaoCarta01);
@@ -55,15 +59,18 @@ int main() {
     printf("Pontos turisticos da cidade: ");
     scanf("%d", &pontosCarta01);
 
+    densidadeCarta01 = populacaoCarta01 / areaCarta01;
+    pibpercapitaCarta01 = pibCarta01 / populacaoCarta01;
+
     printf("--- DADOS CARTA 2 ---\n");
     printf("Estado (1 letra): ");
-    scanf("%s", &estadoCarta02);
+    scanf("%1s", &estadoCarta02);
 
     printf("Codigo da carta (3 letras): ");
-    scanf("%s", &codigoCarta02);
+    scanf("%3s", &codigoCarta02);
 
     printf("Nome da cidade: ");
-    scanf("%s", &nomeCarta02);
+    scanf("%31s", &nomeCarta02);
 
     printf("Populacao da cidade: ");
     scanf("%d", &populacaoCarta02);
@@ -77,11 +84,14 @@ int main() {
     printf("Pontos turisticos da cidade: ");
     scanf("%d", &pontosCarta02);
 
+    densidadeCarta02 = populacaoCarta02 / areaCarta02;
+    pibpercapitaCarta02 = pibCarta02 / populacaoCarta02; 
+
     printf("\n");
-    printf("Carta 1: \nEstado: %s \nCodigo: %s \nNome: %s \nPopulacao: %d \nArea: %.2f \nPIB: %.2f \nPontos turisticos: %d \n\n",
-            estadoCarta01, codigoCarta01, nomeCarta01, populacaoCarta01, areaCarta01, pibCarta01, pontosCarta01);
-    printf("Carta 2: \nEstado: %s \nCodigo: %s \nNome: %s \nPopulacao: %d \nArea: %.2f \nPIB: %.2f \nPontos turisticos: %d \n",
-            estadoCarta02, codigoCarta02, nomeCarta02, populacaoCarta02, areaCarta02, pibCarta02, pontosCarta02);
+    printf("Carta 1: \nEstado: %s \nCodigo: %s \nNome: %s \nPopulacao: %d \nArea: %.2f km^2\nPIB: %.2f bilhoes de R$\nPontos turisticos: %d \nDensidade populacional: %.2f hab/km \nPIB per Capita: %.2f R$\n\n",
+            estadoCarta01, codigoCarta01, nomeCarta01, populacaoCarta01, areaCarta01, pibCarta01, pontosCarta01, densidadeCarta01, pibpercapitaCarta01);
+    printf("Carta 2: \nEstado: %s \nCodigo: %s \nNome: %s \nPopulacao: %d \nArea: %.2f km^2\nPIB: %.2f bilhoes de R$\nPontos turisticos: %d \nDensidade populacional: %.2f hab/km \nPIB per Capita: %.2f R$\n",
+            estadoCarta02, codigoCarta02, nomeCarta02, populacaoCarta02, areaCarta02, pibCarta02, pontosCarta02, densidadeCarta02, pibpercapitaCarta02);
 
     return 0;
 }
